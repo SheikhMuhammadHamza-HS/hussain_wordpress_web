@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Usmani's Financial Consultancy</title>
+    <link rel="icon" type="image/png" href="https://usmanisfinancialconsultancy.com/fav.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy-900: #060d1a;
+            --navy-800: #0a1628;
+            --navy-700: #0d1f3c;
+            --navy-600: #112240;
+            --navy-500: #1a3358;
+            --navy-400: #254a7a;
+            --navy-300: #3a6ba5;
+            --gold-500: #c9a84c;
+            --gold-400: #d4af37;
+            --gold-300: #e0c068;
+            --gold-200: #ecd48f;
+            --gold-100: #f5e6c0;
+            --white: #ffffff;
+            --gray-50: #f8f9fc;
+            --gray-100: #f0f2f7;
+            --gray-200: #e2e6ef;
+            --gray-300: #c5ccd9;
+            --gray-400: #8e99ab;
+            --gray-500: #6b7a90;
+            --text-dark: #0a1628;
+            --text-body: #3a4a63;
+            --text-muted: #6b7a90;
+            --shadow-sm: 0 2px 8px rgba(10,22,40,0.06);
+            --shadow-md: 0 8px 30px rgba(10,22,40,0.1);
+            --shadow-lg: 0 20px 60px rgba(10,22,40,0.15);
+            --shadow-gold: 0 8px 30px rgba(201,168,76,0.2);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+        body{font-family:'Inter',sans-serif;color:var(--text-body);background:var(--white);overflow-x:hidden;line-height:1.7}
+        h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',serif;color:var(--text-dark);font-weight:700;line-height:1.25}
+        img{image-rendering:-webkit-optimize-contrast;image-rendering:high-quality;-ms-interpolation-mode:bicubic}
+
+        /* ===== PAGE SYSTEM ===== */
+        .page-section{display:none;min-height:100vh}
+        .page-section.active-page{display:block}
+        .page-hero{position:relative;min-height:45vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--navy-900);padding-top:100px}
+        .page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.35}
+        .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,13,26,0.92),rgba(10,22,40,0.8),rgba(17,34,64,0.7))}
+        .page-hero-content{position:relative;z-index:5;padding:0 24px}
+        .page-hero-content .section-label{margin-bottom:12px}
+        .page-hero-content h1{font-size:clamp(2rem,4vw,3.2rem);color:var(--white);margin-bottom:16px}
+        .page-hero-content p{color:rgba(255,255,255,0.65);max-width:600px;margin:0 auto;font-size:1rem}
+        .page-hero-content .gold-line{margin:20px auto 0}
+
+        .hero-section,.page-hero{overflow:hidden;position:relative}
+        .hero-section::before,.page-hero::before{content:'';position:absolute;inset:-12% -8% auto auto;width:320px;height:320px;background:radial-gradient(circle,rgba(201,168,76,0.16),transparent 70%);border-radius:50%;z-index:1;pointer-events:none;animation:floatOrb 10s ease-in-out infinite}
+        .hero-section::after,.page-hero::after{content:'';position:absolute;inset:auto auto -8% -8%;width:260px;height:260px;background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%);border-radius:50%;z-index:1;pointer-events:none;animation:floatOrb 12s ease-in-out infinite reverse}
+        .hero-content,.page-hero-content{position:relative;z-index:10}
+        .hero-badge{animation:fadeInUp .8s .2s both}
+        .hero-title{animation:fadeInUp .9s .35s both}
+        .hero-desc{animation:fadeInUp .9s .5s both}
+        .hero-buttons{animation:fadeInUp .9s .7s both}
+        .hero-slide img{animation:heroZoom 16s ease-in-out infinite}
+        .page-hero-bg{transition:transform .8s ease,filter .8s ease;will-change:transform;filter:brightness(0.95)}
+        .about-image-wrapper img,.service-card-img img,.team-card-img img,.training-content-inner img{transition:transform .8s ease,filter .8s ease;will-change:transform}
+        .about-image-wrapper:hover img,.service-card:hover .service-card-img img,.team-card:hover .team-card-img img,.training-content-inner:hover img{transform:scale(1.04)}
+        .btn-gold,.btn-outline-gold,.nav-link,.service-card,.team-card,.about-card,.feature-card,.about-values-card,.contact-info-card,.testimonial-card,.training-pill{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease,background-color .35s ease}
+        .btn-gold:hover,.btn-outline-gold:hover{transform:translateY(-4px) scale(1.02)}
+        .service-card:hover,.team-card:hover,.about-card:hover,.feature-card:hover,.about-values-card:hover,.contact-info-card:hover,.testimonial-card:hover,.training-pill:hover{transform:translateY(-8px)}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes heroZoom{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+        @keyframes floatOrb{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(20px,-18px,0) scale(1.05)}}
+
+        /* ===== PRELOADER ===== */
+        .preloader{position:fixed;inset:0;background:var(--navy-900);z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
+        .preloader.hidden{opacity:0;visibility:hidden}
+        .preloader-spinner{width:50px;height:50px;border:3px solid rgba(201,168,76,0.15);border-top-color:var(--gold-500);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .preloader-text{color:var(--gold-400);font-family:'Playfair Display',serif;font-size:1.1rem;letter-spacing:3px;text-transform:uppercase}
+
+        /* ===== NAVBAR ===== */
+        .main-navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:var(--transition);background:transparent}
+        .main-navbar.scrolled{background:rgba(10,22,40,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 4px 30px rgba(0,0,0,0.3)}
+        .main-navbar .navbar-brand img{height:52px;transition:var(--transition)}
+        .main-navbar.scrolled .navbar-brand img{height:44px}
+        .main-navbar .nav-link{color:rgba(255,255,255,0.85)!important;font-family:'Inter',sans-serif;font-weight:500;font-size:.88rem;letter-spacing:.5px;padding:8px 20px!important;position:relative;transition:var(--transition);cursor:pointer;background:none;border:none}
+        .main-navbar .nav-link::after{content:'';position:absolute;bottom:2px;left:20px;right:20px;height:2px;background:var(--gold-500);transform:scaleX(0);transition:transform .3s}
+        .main-navbar .nav-link:hover,.main-navbar .nav-link.active{color:var(--gold-400)!important}
+        .main-navbar .nav-link:hover::after,.main-navbar .nav-link.active::after{transform:scaleX(1)}
+        .navbar-toggler{border:1px solid rgba(201,168,76,0.4);padding:6px 10px;border-radius:6px}
+        .navbar-toggler .fa-bars{color:var(--gold-400);font-size:1.2rem}
+        .navbar-collapse{text-align:center}
+
+        /* Language Dropdown */
+        #lang-selector{position:relative;display:inline-block!important}
+        #lang-toggle{display:inline-flex!important;align-items:center;cursor:pointer!important;color:rgba(255,255,255,0.85)!important;font-family:'Inter',sans-serif;font-weight:500;font-size:.88rem;letter-spacing:.5px;padding:8px 16px!important;text-decoration:none!important;transition:var(--transition);background:none;border:none}
+        #lang-toggle:hover{color:var(--gold-400)!important}
+        #lang-menu{min-width:6rem;position:absolute;top:calc(100% + 8px);right:0;display:none;z-index:9999;background:var(--white);border:none;border-radius:var(--radius-sm);box-shadow:var(--shadow-lg);list-style:none;margin:0;padding:8px 0}
+        #lang-menu li a{display:block!important;padding:10px 20px;color:var(--text-body)!important;text-decoration:none!important;font-size:.88rem;font-weight:500;transition:var(--transition)}
+        #lang-menu li a:hover{background:var(--gold-100);color:var(--navy-700)!important}
+        #lang-menu li a.fw-bold{color:var(--gold-500)!important}
+
+        /* ===== HERO SLIDER ===== */
+        .hero-section{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--navy-900)}
+        .hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;z-index:0;transition:opacity .95s ease,visibility .95s ease}
+        .hero-slide.active{opacity:1;visibility:visible;z-index:2}
+        .hero-slide.fading-out{visibility:visible;z-index:1;opacity:0}
+        .hero-slide img{width:100%;height:100%;object-fit:cover;transform:none;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform 8s ease-out}
+        .hero-overlay{position:absolute;inset:0;z-index:5;background:linear-gradient(135deg,rgba(6,13,26,0.85) 0%,rgba(10,22,40,0.72) 40%,rgba(17,34,64,0.55) 70%,rgba(26,51,88,0.45) 100%)}
+        .hero-overlay::after{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,var(--white),transparent);z-index:6}
+        .hero-content{position:relative;z-index:10;max-width:780px;padding:0 24px}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);border-radius:50px;padding:8px 22px;margin-bottom:28px;backdrop-filter:blur(10px);opacity:0;transform:translateY(20px);animation:fadeUp .8s .3s forwards}
+        .hero-badge span{color:var(--gold-400);font-size:.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+        .hero-badge i{color:var(--gold-500);font-size:.7rem}
+        .hero-title{font-size:clamp(2.2rem,5vw,3.8rem);color:var(--white);line-height:1.15;margin-bottom:24px;opacity:0;transform:translateY(30px);animation:fadeUp .8s .5s forwards}
+        .hero-title .gold-text{background:linear-gradient(135deg,var(--gold-300),var(--gold-500),var(--gold-300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-desc{font-size:1.05rem;color:rgba(255,255,255,0.7);line-height:1.8;margin-bottom:36px;max-width:600px;opacity:0;transform:translateY(30px);animation:fadeUp .8s .7s forwards}
+        .hero-buttons{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(30px);animation:fadeUp .8s .9s forwards}
+        @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+        .btn-gold{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold-500),var(--gold-400));color:var(--navy-900);padding:14px 36px;border-radius:50px;font-weight:600;font-size:.9rem;letter-spacing:.5px;text-decoration:none;transition:var(--transition);border:none;box-shadow:0 4px 20px rgba(201,168,76,0.35);cursor:pointer}
+        .btn-gold:hover{transform:translateY(-3px);box-shadow:0 8px 35px rgba(201,168,76,0.5);color:var(--navy-900)}
+        .btn-outline-gold{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--gold-400);padding:14px 36px;border-radius:50px;font-weight:600;font-size:.9rem;letter-spacing:.5px;text-decoration:none;border:2px solid rgba(201,168,76,0.4);transition:var(--transition);cursor:pointer}
+        .btn-outline-gold:hover{background:rgba(201,168,76,0.1);border-color:var(--gold-500);color:var(--gold-300);transform:translateY(-3px)}
+        .hero-slide-indicators{position:absolute;bottom:120px;right:60px;z-index:20;display:flex;flex-direction:column;gap:12px}
+        .slide-indicator{width:12px;height:12px;border-radius:50%;border:2px solid rgba(201,168,76,0.4);background:transparent;cursor:pointer;transition:var(--transition)}
+        .slide-indicator.active{background:var(--gold-500);border-color:var(--gold-500);box-shadow:0 0 12px rgba(201,168,76,0.5)}
+        .hero-scroll-down{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.5);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none}
+
+        /* ===== SECTION STYLES ===== */
+        .section-padding{padding:100px 0}
+        .section-label{display:inline-flex;align-items:center;gap:10px;color:var(--gold-500);font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+        .section-label::before,.section-label::after{content:'';width:30px;height:1px;background:var(--gold-400)}
+        .section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--navy-800);margin-bottom:20px;line-height:1.2}
+        .section-desc{font-size:1.02rem;color:var(--text-muted);max-width:650px;margin:0 auto;line-height:1.8}
+        .gold-line{width:60px;height:3px;background:linear-gradient(90deg,var(--gold-500),var(--gold-300));border-radius:3px;margin:16px auto 0}
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section{background:var(--white);position:relative}
+        .about-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-200),transparent)}
+        .about-image-wrapper{position:relative;border-radius:var(--radius-lg);overflow:hidden}
+        .about-image-wrapper::before{content:'';position:absolute;inset:0;border:2px solid var(--gold-200);border-radius:var(--radius-lg);z-index:-1;transform:translate(12px,12px)}
+        .about-image-wrapper img{border-radius:var(--radius-lg);width:100%;height:480px;object-fit:cover;transition:var(--transition);backface-visibility:hidden}
+        .about-image-wrapper:hover img{transform:scale(1.03)}
+        .about-experience-badge{position:absolute;bottom:24px;right:24px;background:rgba(10,22,40,0.9);backdrop-filter:blur(10px);border:1px solid rgba(201,168,76,0.3);border-radius:var(--radius-md);padding:18px 24px;text-align:center;z-index:5}
+        .about-experience-badge .number{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--gold-400);line-height:1}
+        .about-experience-badge .label{font-size:.72rem;color:rgba(255,255,255,0.7);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+        .about-text p{color:var(--text-body);font-size:.98rem;line-height:1.85;margin-bottom:30px}
+        .about-card{display:flex;gap:18px;padding:24px;background:var(--gray-50);border-radius:var(--radius-md);border:1px solid var(--gray-100);transition:var(--transition);margin-bottom:16px}
+        .about-card:hover{border-color:var(--gold-200);box-shadow:var(--shadow-gold);transform:translateY(-3px)}
+        .about-card-icon{flex-shrink:0;width:52px;height:52px;background:linear-gradient(135deg,var(--navy-700),var(--navy-600));border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--gold-400);font-size:1.2rem}
+        .about-card h5{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;color:var(--navy-800);margin-bottom:6px}
+        .about-card p{font-size:.88rem;color:var(--text-muted);margin-bottom:0;line-height:1.6}
+
+        /* ===== SERVICES SECTION ===== */
+        .services-section{background:var(--gray-50);position:relative}
+        .service-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-100);transition:var(--transition);height:100%;display:flex;flex-direction:column}
+        .service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--gold-200)}
+        .service-card-img{position:relative;height:220px;overflow:hidden}
+        .service-card-img img{width:100%;height:100%;object-fit:cover;transition:var(--transition);backface-visibility:hidden}
+        .service-card:hover .service-card-img img{transform:scale(1.08)}
+        .service-card-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to top,var(--white),transparent)}
+        .service-card-body{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column}
+        .service-card-body .service_title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy-800);text-decoration:none;margin-bottom:10px;transition:var(--transition);display:block;cursor:pointer}
+        .service-card-body .service_title:hover{color:var(--gold-500)}
+        .service-card-body p{font-size:.9rem;color:var(--text-muted);line-height:1.7;flex:1;margin-bottom:18px}
+        .btn-service{display:inline-flex;align-items:center;gap:8px;color:var(--gold-500);font-weight:600;font-size:.85rem;text-decoration:none;letter-spacing:.5px;transition:var(--transition);padding:10px 24px;border-radius:50px;border:1.5px solid var(--gold-300);background:transparent;cursor:pointer}
+        .btn-service:hover{background:var(--gold-500);color:var(--navy-900);border-color:var(--gold-500);transform:translateY(-2px);box-shadow:var(--shadow-gold)}
+
+        /* ===== FEATURES SECTION ===== */
+        .features-section{background:var(--navy-800);position:relative;overflow:hidden}
+        .features-section::before{content:'';position:absolute;top:-200px;right:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,0.08),transparent 70%);border-radius:50%}
+        .features-section .section-title{color:var(--white)}
+        .features-section .section-desc{color:rgba(255,255,255,0.6)}
+        .feature-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:36px 28px;text-align:center;transition:var(--transition);height:100%;position:relative;overflow:hidden}
+        .feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold-500),transparent);opacity:0;transition:var(--transition)}
+        .feature-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(201,168,76,0.2);transform:translateY(-6px)}
+        .feature-card:hover::before{opacity:1}
+        .feature-card img{width:72px;height:72px;margin-bottom:24px;filter:brightness(0) invert(0.72) sepia(0.8) saturate(3) hue-rotate(10deg);transition:var(--transition)}
+        .feature-card:hover img{filter:brightness(0) invert(0.82) sepia(1) saturate(4) hue-rotate(5deg);transform:scale(1.1)}
+        .feature-card h4{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:14px;text-transform:capitalize;line-height:1.4}
+        .feature-card p{font-size:.88rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:0}
+
+        /* ===== TEAM SECTION ===== */
+        .team-section{background:var(--white);position:relative}
+        .team-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--white);border:1px solid var(--gray-100);transition:var(--transition);max-width:380px;margin:0 auto}
+        .team-card:hover{box-shadow:var(--shadow-lg);border-color:var(--gold-200);transform:translateY(-6px)}
+        .team-card-img{position:relative;height:380px;overflow:hidden}
+        .team-card-img img{width:100%;height:100%;object-fit:cover;transition:var(--transition);backface-visibility:hidden}
+        .team-card:hover .team-card-img img{transform:scale(1.05)}
+        .team-card-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to top,var(--white),transparent)}
+        .team-card-body{padding:20px 28px 30px;text-align:center;position:relative;margin-top:-30px;z-index:5}
+        .team-card-body h4{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy-800);margin-bottom:4px}
+        .team-card-body span{color:var(--gold-500);font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:2px;text-transform:uppercase}
+
+        /* ===== TRAINING SECTION ===== */
+        .training-section{background:var(--gray-50);position:relative}
+        .training-pills{display:flex;flex-direction:column;gap:12px}
+        .training-pill{padding:20px 24px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);cursor:pointer;transition:var(--transition);text-decoration:none;display:block}
+        .training-pill:hover{border-color:var(--gold-300)}
+        .training-pill.active{background:var(--navy-700);border-color:var(--navy-600);box-shadow:var(--shadow-md)}
+        .training-pill h5{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--navy-800);margin-bottom:0;transition:var(--transition)}
+        .training-pill.active h5{color:var(--gold-400)}
+        .training-content-area{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--gray-100);overflow:hidden;box-shadow:var(--shadow-sm)}
+        .training-content-area .tab-pane{display:none}
+        .training-content-area .tab-pane.active{display:block}
+        .training-content-inner{display:flex;gap:0;min-height:420px}
+        .training-content-inner img{width:55%;height:100%;object-fit:cover;min-height:420px;backface-visibility:hidden}
+        .training-text-area{padding:40px 32px;flex:1;display:flex;flex-direction:column;justify-content:center}
+        .training-text-area h3{font-size:1.3rem;color:var(--navy-800);margin-bottom:16px}
+        .training-text-area p{font-size:.92rem;color:var(--text-muted);line-height:1.8}
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonial-section{background:var(--white);position:relative;overflow:hidden}
+        .testimonial-section::before{content:'';position:absolute;bottom:-100px;left:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(201,168,76,0.06),transparent 70%);border-radius:50%}
+        .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+        .testimonial-card{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:32px 28px;position:relative;transition:var(--transition)}
+        .testimonial-card:hover{border-color:var(--gold-200);box-shadow:var(--shadow-gold);transform:translateY(-4px)}
+        .testimonial-card .quote-icon{color:var(--gold-300);font-size:2rem;margin-bottom:18px;opacity:.6}
+        .testimonial-card p{font-size:.93rem;color:var(--text-body);line-height:1.8;margin-bottom:20px;font-style:italic}
+        .testimonial-card .stars{color:var(--gold-500);font-size:.8rem;margin-bottom:12px;display:flex;gap:3px}
+        .testimonial-card h6{font-family:'Inter',sans-serif;font-weight:600;font-size:.88rem;color:var(--navy-800);margin-bottom:0;text-transform:capitalize}
+
+        /* ===== CONTACT PAGE ===== */
+        .contact-info-card{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:32px 28px;transition:var(--transition);height:100%}
+        .contact-info-card:hover{border-color:var(--gold-200);box-shadow:var(--shadow-gold);transform:translateY(-4px)}
+        .contact-info-card .icon-circle{width:56px;height:56px;background:linear-gradient(135deg,var(--navy-700),var(--navy-600));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-400);font-size:1.2rem;margin-bottom:18px}
+        .contact-info-card h5{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--navy-800);margin-bottom:10px}
+        .contact-info-card p{font-size:.9rem;color:var(--text-muted);margin-bottom:0;line-height:1.7}
+        .contact-form-wrap{background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-sm)}
+        .contact-form-wrap .form-label{font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem;color:var(--navy-800);letter-spacing:.5px}
+        .contact-form-wrap .form-control,.contact-form-wrap .form-select{border:1px solid var(--gray-200);border-radius:var(--radius-sm);padding:12px 16px;font-size:.92rem;color:var(--text-body);transition:var(--transition);background:var(--gray-50)}
+        .contact-form-wrap .form-control:focus,.contact-form-wrap .form-select:focus{border-color:var(--gold-400);box-shadow:0 0 0 3px rgba(201,168,76,0.15);outline:none;background:var(--white)}
+        .contact-form-wrap textarea.form-control{min-height:140px;resize:vertical}
+
+        /* ===== ABOUT PAGE FULL ===== */
+        .about-values-card{text-align:center;padding:36px 24px;background:var(--white);border:1px solid var(--gray-100);border-radius:var(--radius-lg);transition:var(--transition);height:100%}
+        .about-values-card:hover{border-color:var(--gold-200);box-shadow:var(--shadow-gold);transform:translateY(-5px)}
+        .about-values-card .val-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--navy-700),var(--navy-600));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-400);font-size:1.4rem;margin:0 auto 20px}
+        .about-values-card h5{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;color:var(--navy-800);margin-bottom:10px}
+        .about-values-card p{font-size:.88rem;color:var(--text-muted);margin-bottom:0;line-height:1.7}
+
+        /* ===== FOOTER ===== */
+        .main-footer{background:var(--navy-900);position:relative;overflow:hidden}
+        .main-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-500),transparent)}
+        .footer-logo img{height:50px;margin-bottom:20px;filter:brightness(1.1)}
+        .footer-logo p{color:rgba(255,255,255,0.5);font-size:.9rem;line-height:1.75}
+        .footer-heading{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;color:var(--gold-400);margin-bottom:24px;letter-spacing:.5px;position:relative;padding-bottom:14px}
+        .footer-heading::after{content:'';position:absolute;bottom:0;left:0;width:30px;height:2px;background:var(--gold-500)}
+        .footer-links{display:flex;flex-direction:column;gap:12px}
+        .footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:.9rem;transition:var(--transition);display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:none;border:none;padding:0;font-family:'Inter',sans-serif}
+        .footer-links a::before{content:'';width:0;height:1px;background:var(--gold-500);transition:var(--transition)}
+        .footer-links a:hover{color:var(--gold-400);padding-left:8px}
+        .footer-links a:hover::before{width:12px}
+        .footer-contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px}
+        .footer-contact-item i{color:var(--gold-500);font-size:1rem;margin-top:4px;flex-shrink:0}
+        .footer-contact-item p{color:rgba(255,255,255,0.55);font-size:.88rem;margin-bottom:0;line-height:1.6}
+        .footer-social{display:flex;gap:10px;margin-top:20px}
+        .footer-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;color:var(--gold-400);text-decoration:none;transition:var(--transition)}
+        .footer-social a:hover{background:var(--gold-500);color:var(--navy-900);border-color:var(--gold-500);transform:translateY(-3px)}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:20px 0;margin-top:50px}
+        .footer-bottom p{color:rgba(255,255,255,0.35);font-size:.82rem;margin-bottom:0}
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        .reveal-delay-1{transition-delay:.1s}
+        .reveal-delay-2{transition-delay:.2s}
+        .reveal-delay-3{transition-delay:.3s}
+        .reveal-delay-4{transition-delay:.4s}
+
+        /* ===== PAGE TRANSITION ===== */
+        .page-fade-in{animation:pageFadeIn .5s ease forwards}
+        @keyframes pageFadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:991px){
+            .main-navbar{background:rgba(10,22,40,0.95);backdrop-filter:blur(20px)}
+            .navbar-collapse{background:var(--navy-800);border-radius:var(--radius-md);padding:16px;margin-top:12px;border:1px solid rgba(255,255,255,0.05)}
+            .main-navbar .nav-link{padding:12px 16px!important}
+            .main-navbar .nav-link::after{display:none}
+            #lang-menu{right:auto;left:50%;transform:translateX(-50%)}
+            .hero-slide-indicators{display:none}
+            .training-content-inner{flex-direction:column}
+            .training-content-inner img{width:100%;height:240px;min-height:auto}
+            .testimonial-grid{grid-template-columns:1fr;max-width:500px;margin:0 auto}
+            .about-image-wrapper img{height:350px}
+        }
+        @media(max-width:767px){
+            .section-padding{padding:70px 0}
+            .hero-content{text-align:center}
+            .hero-desc{margin:0 auto 36px}
+            .hero-buttons{justify-content:center}
+            .about-image-wrapper::before{display:none}
+            .page-hero{min-height:35vh;padding-top:90px}
+        }
+
+        .cursor-glow{position:fixed;width:300px;height:300px;background:radial-gradient(circle,rgba(201,168,76,0.04),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;transform:translate(-50%,-50%);transition:left .3s,top .3s}
+        .slider-section,.fullwidthbanner-container,#revolution-slider-half{display:none!important}
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div style="text-align:center">
+            <div class="preloader-spinner"></div>
+            <div class="preloader-text">Usmani's</div>
+        </div>
+    </div>
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navbar -->
+    <nav class="main-navbar navbar navbar-expand-lg" id="mainNavbar">
+        <div class="container">
+            <a href="#" class="navbar-brand p-0 d-flex align-items-center" onclick="navigateTo('home');return false;">
+                <img src="https://usmanisfinancialconsultancy.com/logo.jpeg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a class="nav-item nav-link active" data-page="home" onclick="navigateTo('home')">Home</a>
+                    <a class="nav-item nav-link" data-page="about" onclick="navigateTo('about')">About</a>
+                    <a class="nav-item nav-link" data-page="services" onclick="navigateTo('services')">Services</a>
+                    <a class="nav-item nav-link" data-page="contact" onclick="navigateTo('contact')">Contact Us</a>
+
+                    <div class="nav-item" id="lang-selector">
+                        <a id="lang-toggle" href="#" class="nav-link d-inline-flex align-items-center">
+                            <span>EN</span>
+                            <i class="fas fa-caret-down ms-2"></i>
+                        </a>
+                        <ul id="lang-menu">
+                            <li><a class="fw-bold" href="https://usmanisfinancialconsultancy.com/lang/en">EN</a></li>
+                            <li><a href="https://usmanisfinancialconsultancy.com/lang/ru">RU</a></li>
+                            <li><a href="https://usmanisfinancialconsultancy.com/lang/fr">FR</a></li>
+                            <li><a href="https://usmanisfinancialconsultancy.com/lang/uz">UZ</a></li>
+                            <li><a href="https://usmanisfinancialconsultancy.com/lang/ur">UR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ==================== HOME PAGE ==================== -->
+    <div class="page-section active-page" id="page-home">
+
+        <section class="hero-section">
+            <div class="hero-slide active" data-slide="0">
+                <img src="https://arabiconline.eu/wp-content/uploads/2023/08/sur_mosque.jpg" alt="Hero 1">
+            </div>
+            <div class="hero-slide" data-slide="1">
+                <img src="https://usmanisfinancialconsultancy.com/storage/heroes/MIULoil3jTHfHQHgxEKPeYtDGM5yXZvtVjLHQInR.jpg" alt="Hero 2">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge"><i class="fas fa-star"></i><span>Shariah-Compliant Finance</span><i class="fas fa-star"></i></div>
+                    <h1 class="hero-title">Empowering Islamic Finance, <span class="gold-text">Globally</span></h1>
+                    <p class="hero-desc">Usmani's Financial Consultancy specializes in Shariah-compliant finance, eliminating Riba and non-Islamic agreements.</p>
+                    <div class="hero-buttons">
+                        <a class="btn-gold" onclick="navigateTo('contact')">Book A Free Consultation <i class="fas fa-arrow-right"></i></a>
+                        <a class="btn-outline-gold" onclick="navigateTo('research')">Research and Publication <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide-indicators">
+                <div class="slide-indicator active" data-slide="0"></div>
+                <div class="slide-indicator" data-slide="1"></div>
+            </div>
+            <a href="#homeAboutSection" class="hero-scroll-down"><span>Scroll</span><i class="fas fa-chevron-down"></i></a>
+        </section>
+
+        <!-- About Preview -->
+        <section class="about-section section-padding" id="homeAboutSection">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-7 reveal reveal-delay-2">
+                        <div class="about-text">
+                            <div class="section-label">About Us</div>
+                            <h2 class="section-title">Leading the Way in Islamic Finance</h2>
+                            <div class="gold-line" style="margin:16px 0 24px"></div>
+                            <p>ٱلْحَمْدُ لِلَّٰهِ, Usmani's Financial Consultancy (UFC) is a premier Shariah compliance firm dedicated to transforming the financial landscape by eliminating interest (Riba) and non-Islamic agreements. With extensive expertise and strategic global partnerships, we provide cutting-edge financial solutions that align with Islamic principles.</p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="about-card">
+                                        <div class="about-card-icon"><i class="fas fa-lightbulb"></i></div>
+                                        <div><h5>OUR MISSION</h5><p>Empower individuals and businesses to navigate finance with integrity and adherence to Islamic principles.</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="about-card">
+                                        <div class="about-card-icon"><i class="bi bi-bookmark-heart-fill"></i></div>
+                                        <div><h5>OUR VISION</h5><p>Be a leading force in promoting Islamic financial practices globally for ethical prosperity.</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top:20px">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 reveal">
+                        <div class="about-image-wrapper">
+                            <img src="https://usmanisfinancialconsultancy.com/storage/abouts/f4KKg1kmuCenHeWMlGNElUElSR1KP9mp3IZzhtO6.jpg" alt="About Us">
+                            <div class="about-experience-badge"><div class="number">10+</div><div class="label">Years of Excellence</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="services-section section-padding">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <div class="section-label">Our Services</div>
+                    <h2 class="section-title">We Provide Best Offer For The Services</h2>
+                    <div class="gold-line"></div>
+                    <p class="section-desc mt-4">We offer expert Shariah-compliant financial solutions, helping you make ethical, interest-free decisions aligned with Islamic principles.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/hjIKOdgeyj0rRvSRA8OVAM4gacE845ZIcyfNKbc7.jpg" alt="Product Development"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">PRODUCT DEVELOPMENT</span>
+                                <p>We specialize in crafting solutions that align with Shariah principles, offering you peace of mind in your financial endeavors.</p>
+                                <a class="btn-service" onclick="navigateTo('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/1h2HSaS6LzIyyMNRFc2YDY9BFKtRYx918CuhuIgr.jpg" alt="Islamic Finance Consultancy"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">ISLAMIC FINANCE PRODUCT'S CONSULTANCY</span>
+                                <p>Expert guidance on Islamic financial products tailored to meet the specific needs and objectives of clients, ensuring compliance with Shariah principles.</p>
+                                <a class="btn-service" onclick="navigateTo('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/IXir6FZoIscQGZhPvXjYuwZSi5c6Issi831IPNMb.jpg" alt="Sharia Review"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">SHARIA REVIEW AND AUDIT</span>
+                                <p>Through examination and assessment of financial practices, products, and transactions to ensure compliance with Islamic law and principles.</p>
+                                <a class="btn-service" onclick="navigateTo('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/Wc2h1T8wq1HSzGBJuhvqXkdBBW7N8iOJm4WcxytL.jpg" alt="Advisory"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">ADVISORY AND CORPORATE RESTRUCTURING</span>
+                                <p>Strategic guidance and support for organizations seeking to optimize their operations, improve efficiency, and align with Shariah-compliant practices through restructuring initiatives.</p>
+                                <a class="btn-service" onclick="navigateTo('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/wkaT4p18cNXyVOOakIoePBl8IH5dlXlEXoF4YTZf.jpg" alt="Governance"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">CORPORATE GOVERNANCE</span>
+                                <p>Uphold the highest standards of ethical business practices through our corporate governance services. We guide your organization to operate transparently and responsibly, fostering trust and long-term success.</p>
+                                <a class="btn-service" onclick="navigateTo('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/ij6Vov59G31zjrEOeeI6PMzXh7U05bXBFE1fDqwr.jpg" alt="Sukuk"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">Sukuk Structuring</span>
+                                <p>Unlock new avenues for capital with our Sukuk structuring expertise. Tailored to your needs, these Islamic financial instruments facilitate capital market investments while upholding ethical standards.</p>
+                                <a class="btn-service" onclick="navigateTo('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features-section section-padding">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <div class="section-label">Our Features</div>
+                    <h2 class="section-title">Ethical Financial Solutions, Guided by Shariah Principles</h2>
+                    <div class="gold-line"></div>
+                    <p class="section-desc mt-4">Usmani's offers expert Shariah-compliant financial solutions, backed by global partnerships, guiding you towards ethical financial success.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-1"><div class="feature-card"><img src="https://usmanisfinancialconsultancy.com/icons/icon1.png" alt=""><h4>Expert Shariah-Compliant Solutions</h4><p>Specialized services adhering strictly to Shariah law, providing ethical, interest-free financial solutions.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-2"><div class="feature-card"><img src="https://usmanisfinancialconsultancy.com/icons/icon2.png" alt=""><h4>Global Partnerships & Expertise</h4><p>Broad network of global partners offering world-class financial insights for clients worldwide.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-3"><div class="feature-card"><img src="https://usmanisfinancialconsultancy.com/icons/icon3.png" alt=""><h4>Interest-Free (Riba-Free) Finance</h4><p>Commitment to liberating finance from interest, upholding Islamic values with sustainable alternatives.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-4"><div class="feature-card"><img src="https://usmanisfinancialconsultancy.com/icons/icon4.png" alt=""><h4>In-Depth Knowledge & Consultation</h4><p>Extensive expertise in Islamic finance with personalized guidance for complex financial decisions.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="team-section section-padding">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <div class="section-label">Our Team</div>
+                    <h2 class="section-title">Meet Our Expert Team Members</h2>
+                    <div class="gold-line"></div>
+                    <p class="section-desc mt-4">UFC is led by President Dr. Mufti Hassan Usmani, son of Mufti Taqi Usmani. Co-founded by Mr. Shahzad Ahmed, dedicated to ethical, interest-free financial solutions.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-1"><div class="team-card"><div class="team-card-img"><img src="https://usmanisfinancialconsultancy.com/assets/images/mufti-sahab.jpeg" alt="Dr Mufti Hassan Usmani"></div><div class="team-card-body"><h4>Dr Mufti Hassan Usmani</h4><span>President</span></div></div></div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-2"><div class="team-card"><div class="team-card-img"><img src="https://usmanisfinancialconsultancy.com/assets/images/shezad-ahmad.jpeg" alt="Shahzad Ahmad"></div><div class="team-card-body"><h4>Shahzad Ahmad</h4><span>Co-Founder</span></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training -->
+        <section class="training-section section-padding">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <div class="section-label">Training & Development</div>
+                    <h2 class="section-title">Empowering Clients with Knowledge</h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-xl-5 reveal">
+                        <div class="training-pills">
+                            <a class="training-pill active" onclick="switchTrainingTab(this,'tabWorkshop')"><h5><i class="fas fa-chalkboard-teacher me-2" style="color:var(--gold-500)"></i>Interactive Workshops and Webinars</h5></a>
+                            <a class="training-pill" onclick="switchTrainingTab(this,'tabConsultation')"><h5><i class="fas fa-user-tie me-2" style="color:var(--gold-500)"></i>One-on-One Consultations</h5></a>
+                            <a class="training-pill" onclick="switchTrainingTab(this,'tabLearning')"><h5><i class="fas fa-graduation-cap me-2" style="color:var(--gold-500)"></i>Continuous Learning Opportunities</h5></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 reveal reveal-delay-2">
+                        <div class="training-content-area">
+                            <div id="tabWorkshop" class="tab-pane active"><div class="training-content-inner"><img src="https://usmanisfinancialconsultancy.com/assets/training/workshop-1.jpg" alt=""><div class="training-text-area"><h3>Interactive Workshops and Webinars</h3><p>Engage with our expert team through hands-on workshops and live webinars designed to provide in-depth knowledge of Islamic finance principles.</p></div></div></div>
+                            <div id="tabConsultation" class="tab-pane"><div class="training-content-inner"><img src="https://usmanisfinancialconsultancy.com/assets/training/consultation-1.jpg" alt=""><div class="training-text-area"><h3>One-on-One Consultations</h3><p>Receive personalized guidance tailored to your specific financial needs. Our consultants work closely with you for thorough understanding.</p></div></div></div>
+                            <div id="tabLearning" class="tab-pane"><div class="training-content-inner"><img src="https://usmanisfinancialconsultancy.com/assets/training/consultation_2.png" alt=""><div class="training-text-area"><h3>Continuous Learning Opportunities</h3><p>Stay updated with ongoing learning resources including seminars, articles, and resources in Islamic finance.</p></div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonial-section section-padding">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <div class="section-label">Testimonial</div>
+                    <h2 class="section-title">Our Clients Reviews</h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card reveal reveal-delay-1"><div class="quote-icon"><i class="fas fa-quote-left"></i></div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Usmani's helped us implement an interest-free strategy that aligns with our business goals and Islamic values. Their expertise has been invaluable.</p><h6>Ahmed M., CEO, Ethical Investment Group</h6></div>
+                    <div class="testimonial-card reveal reveal-delay-2"><div class="quote-icon"><i class="fas fa-quote-left"></i></div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>They guided me in creating a Shariah-compliant investment plan that delivers profitable returns. Their professionalism made it seamless.</p><h6>Sara K., Independent Investor</h6></div>
+                    <div class="testimonial-card reveal reveal-delay-3"><div class="quote-icon"><i class="fas fa-quote-left"></i></div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>Exceptional service in eliminating Riba from our finances, opening new growth opportunities while staying true to Islamic principles.</p><h6>Imran S., CFO, Global Trading Corporation</h6></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- END HOME PAGE -->
+
+
+    <!-- ==================== ABOUT PAGE ==================== -->
+    <div class="page-section" id="page-about">
+        <div class="page-hero">
+            <div class="page-hero-bg" style="background-image:url('https://usmanisfinancialconsultancy.com/storage/abouts/f4KKg1kmuCenHeWMlGNElUElSR1KP9mp3IZzhtO6.jpg')"></div>
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <div class="section-label">About Us</div>
+                <h1>Leading the Way in Islamic Finance</h1>
+                <div class="gold-line"></div>
+            </div>
+        </div>
+
+        <section class="about-section section-padding">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-7 reveal reveal-delay-2">
+                        <div class="about-text">
+                            <div class="section-label">Who We Are</div>
+                            <h2 class="section-title">About Usmani's Financial Consultancy</h2>
+                            <div class="gold-line" style="margin:16px 0 24px"></div>
+                            <p>ٱلْحَمْدُ لِلَّٰهِ, Usmani's Financial Consultancy (UFC) is a premier Shariah compliance firm dedicated to transforming the financial landscape by eliminating interest (Riba) and non-Islamic agreements. With extensive expertise and strategic global partnerships, we provide cutting-edge financial solutions that align with Islamic principles.</p>
+                            <p>Our firm is led by President Dr. Mufti Hassan Usmani, the son of Mufti Taqi Usmani, a globally renowned Islamic scholar and authority in Islamic finance. Under the mentorship of Mufti Taqi Usmani DB, UsFC upholds the highest standards of Shariah compliance, ensuring that our clients benefit from ethical, interest-free financial structures.</p>
+                            <p>Our mission is to empower individuals, businesses, and financial institutions worldwide with Shariah-compliant solutions that promote economic justice and prosperity. Let us help you navigate the world of Islamic finance with confidence.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 reveal">
+                        <div class="about-image-wrapper">
+                            <img src="https://usmanisfinancialconsultancy.com/storage/abouts/f4KKg1kmuCenHeWMlGNElUElSR1KP9mp3IZzhtO6.jpg" alt="About Us">
+                            <div class="about-experience-badge"><div class="number">10+</div><div class="label">Years of Excellence</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="section-padding" style="background:var(--gray-50)">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6 reveal reveal-delay-1">
+                        <div class="about-card" style="padding:36px">
+                            <div class="about-card-icon" style="width:64px;height:64px;font-size:1.4rem"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <h5 style="font-size:1.1rem;margin-bottom:12px">OUR MISSION</h5>
+                                <p style="font-size:.95rem;line-height:1.8">Our Mission is to empower individuals and businesses to navigate the complex world of finance and business with integrity and adherence to Islamic principles. We strive to make Shariah-compliant finance accessible, practical, and beneficial for all.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 reveal reveal-delay-2">
+                        <div class="about-card" style="padding:36px">
+                            <div class="about-card-icon" style="width:64px;height:64px;font-size:1.4rem"><i class="bi bi-bookmark-heart-fill"></i></div>
+                            <div>
+                                <h5 style="font-size:1.1rem;margin-bottom:12px">OUR VISION</h5>
+                                <p style="font-size:.95rem;line-height:1.8">Our vision is to be a leading force in promoting Islamic financial practices globally. We envision a world where businesses flourish, individuals prosper, and communities thrive through ethical financial practices rooted in Shariah principles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <div class="section-label">Our Values</div>
+                    <h2 class="section-title">What We Stand For</h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-1"><div class="about-values-card"><div class="val-icon"><i class="fas fa-balance-scale"></i></div><h5>Justice & Fairness</h5><p>Every financial solution we design is rooted in the principles of equity and justice as prescribed by Islamic law.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-2"><div class="about-values-card"><div class="val-icon"><i class="fas fa-handshake"></i></div><h5>Integrity & Trust</h5><p>We maintain the highest standards of honesty and transparency in all our dealings and client relationships.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-3"><div class="about-values-card"><div class="val-icon"><i class="fas fa-globe-americas"></i></div><h5>Global Excellence</h5><p>Through strategic partnerships worldwide, we deliver world-class Islamic finance solutions to clients globally.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-4"><div class="about-values-card"><div class="val-icon"><i class="fas fa-book-quran"></i></div><h5>Shariah Compliance</h5><p>Unwavering commitment to ensuring every product and service meets the highest standards of Islamic jurisprudence.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Full -->
+        <section class="team-section section-padding" style="background:var(--gray-50)">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <div class="section-label">Our Team</div>
+                    <h2 class="section-title">Meet Our Expert Team Members</h2>
+                    <div class="gold-line"></div>
+                    <p class="section-desc mt-4">UFC, led by President Dr. Mufti Hassan Usmani, son of renowned Islamic scholar Mufti Taqi Usmani, upholds the highest standards of Shariah compliance. Co-founded by Islamic finance expert Mr. Shahzad Ahmed. We have members from Turkey, Uzbekistan, Tunisia, Pakistan and we seek their efforts and knowledge time to time.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-1"><div class="team-card"><div class="team-card-img"><img src="https://usmanisfinancialconsultancy.com/assets/images/mufti-sahab.jpeg" alt="Dr Mufti Hassan Usmani"></div><div class="team-card-body"><h4>Dr Mufti Hassan Usmani</h4><span>President</span></div></div></div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-2"><div class="team-card"><div class="team-card-img"><img src="https://usmanisfinancialconsultancy.com/assets/images/shezad-ahmad.jpeg" alt="Shahzad Ahmad"></div><div class="team-card-body"><h4>Shahzad Ahmad</h4><span>Co-Founder</span></div></div></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- END ABOUT PAGE -->
+
+
+    <!-- ==================== SERVICES PAGE ==================== -->
+    <div class="page-section" id="page-services">
+        <div class="page-hero">
+            <div class="page-hero-bg" style="background-image:url('https://usmanisfinancialconsultancy.com/storage/services/hjIKOdgeyj0rRvSRA8OVAM4gacE845ZIcyfNKbc7.jpg')"></div>
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <div class="section-label">Our Services</div>
+                <h1>Shariah-Compliant Financial Solutions</h1>
+                <div class="gold-line"></div>
+                <p>We offer expert Shariah-compliant financial solutions, helping you make ethical, interest-free decisions aligned with Islamic principles.</p>
+            </div>
+        </div>
+
+        <section class="services-section section-padding">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/hjIKOdgeyj0rRvSRA8OVAM4gacE845ZIcyfNKbc7.jpg" alt="Product Development"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">PRODUCT DEVELOPMENT</span>
+                                <p>We specialize in crafting solutions that align with Shariah principles, offering you peace of mind in your financial endeavors.</p>
+                                <a class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/1h2HSaS6LzIyyMNRFc2YDY9BFKtRYx918CuhuIgr.jpg" alt="Islamic Finance Consultancy"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">ISLAMIC FINANCE PRODUCT'S CONSULTANCY</span>
+                                <p>Expert guidance and advice on Islamic financial products tailored to meet the specific needs and objectives of clients, ensuring compliance with Shariah principles.</p>
+                                <a class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/IXir6FZoIscQGZhPvXjYuwZSi5c6Issi831IPNMb.jpg" alt="Sharia Review"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">SHARIA REVIEW AND AUDIT</span>
+                                <p>Through examination and assessment of financial practices, products, and transactions to ensure compliance with Islamic law and principles.</p>
+                                <a class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/Wc2h1T8wq1HSzGBJuhvqXkdBBW7N8iOJm4WcxytL.jpg" alt="Advisory"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">ADVISORY AND CORPORATE RESTRUCTURING</span>
+                                <p>Strategic guidance and support for organizations seeking to optimize their operations, improve efficiency, and align with Shariah-compliant practices through restructuring initiatives.</p>
+                                <a class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/wkaT4p18cNXyVOOakIoePBl8IH5dlXlEXoF4YTZf.jpg" alt="Governance"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">CORPORATE GOVERNANCE</span>
+                                <p>Uphold the highest standards of ethical business practices through our corporate governance services. We guide your organization to operate transparently and responsibly, fostering trust and long-term success.</p>
+                                <a class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+                        <div class="service-card">
+                            <div class="service-card-img"><img src="https://usmanisfinancialconsultancy.com/storage/services/ij6Vov59G31zjrEOeeI6PMzXh7U05bXBFE1fDqwr.jpg" alt="Sukuk"></div>
+                            <div class="service-card-body">
+                                <span class="service_title">Sukuk Structuring</span>
+                                <p>Unlock new avenues for capital with our Sukuk structuring expertise. Tailored to your needs, these Islamic financial instruments facilitate capital market investments while upholding ethical standards.</p>
+                                <a class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features on Services Page -->
+        <section class="features-section section-padding">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <div class="section-label">Why Choose Us</div>
+                    <h2 class="section-title">What Sets Us Apart</h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-1"><div class="feature-card"><img src="https://usmanisfinancialconsultancy.com/icons/icon1.png" alt=""><h4>Shariah-Compliant</h4><p>Every solution strictly adheres to Islamic law and principles.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-2"><div class="feature-card"><img src="https://usmanisfinancialconsultancy.com/icons/icon2.png" alt=""><h4>Global Reach</h4><p>Strategic partnerships delivering worldwide financial insights.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-3"><div class="feature-card"><img src="https://usmanisfinancialconsultancy.com/icons/icon3.png" alt=""><h4>Riba-Free</h4><p>Complete elimination of interest from all financial structures.</p></div></div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-4"><div class="feature-card"><img src="https://usmanisfinancialconsultancy.com/icons/icon4.png" alt=""><h4>Expert Guidance</h4><p>Personalized consultation for complex financial decisions.</p></div></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- END SERVICES PAGE -->
+
+
+    <!-- ==================== CONTACT PAGE ==================== -->
+    <div class="page-section" id="page-contact">
+        <div class="page-hero">
+            <div class="page-hero-bg" style="background-image:url('https://usmanisfinancialconsultancy.com/storage/heroes/MIULoil3jTHfHQHgxEKPeYtDGM5yXZvtVjLHQInR.jpg')"></div>
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <div class="section-label">Contact Us</div>
+                <h1>Get In Touch</h1>
+                <div class="gold-line"></div>
+                <p>Have questions about Shariah-compliant finance? We're here to help you navigate your financial journey.</p>
+            </div>
+        </div>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
+                        <div class="contact-info-card">
+                            <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                            <h5>Our Office</h5>
+                            <p>Unit F, Winston Business Park, Churchill Way 26434, Sheffield, United Kingdom, S35 2PS</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
+                        <div class="contact-info-card">
+                            <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                            <h5>Email Us</h5>
+                            <p>info@usmanisfinancialconsultancy.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
+                        <div class="contact-info-card">
+                            <div class="icon-circle"><i class="fa fa-phone-alt"></i></div>
+                            <h5>Call Us</h5>
+                            <p>+447478034875</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 reveal reveal-delay-4">
+                        <div class="contact-info-card">
+                            <div class="icon-circle"><i class="fas fa-clock"></i></div>
+                            <h5>Working Hours</h5>
+                            <p>Monday - Friday<br>9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-5">
+                    <div class="col-lg-7 reveal">
+                        <div class="contact-form-wrap">
+                            <div class="section-label">Send a Message</div>
+                            <h3 class="section-title" style="font-size:1.6rem;margin-bottom:8px">We'd Love to Hear From You</h3>
+                            <div class="gold-line" style="margin:0 0 30px"></div>
+                            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control" placeholder="Your name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" placeholder="your@email.com" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" placeholder="+44 xxx xxx xxxx">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Subject *</label>
+                                        <select class="form-select" required>
+                                            <option value="">Select a topic</option>
+                                            <option>Product Development</option>
+                                            <option>Islamic Finance Consultancy</option>
+                                            <option>Sharia Review & Audit</option>
+                                            <option>Corporate Restructuring</option>
+                                            <option>Corporate Governance</option>
+                                            <option>Sukuk Structuring</option>
+                                            <option>Training & Development</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Your Message *</label>
+                                        <textarea class="form-control" placeholder="Tell us about your requirements..." required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn-gold" style="border:none">
+                                            Send Message <i class="fas fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="contactSuccess" style="display:none;text-align:center;padding:40px">
+                                <div style="width:70px;height:70px;background:linear-gradient(135deg,var(--gold-500),var(--gold-300));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem;color:var(--navy-900)"><i class="fas fa-check"></i></div>
+                                <h3 style="color:var(--navy-800);margin-bottom:10px">Message Sent!</h3>
+                                <p style="color:var(--text-muted)">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 reveal reveal-delay-2">
+                        <div style="background:var(--navy-800);border-radius:var(--radius-lg);padding:40px;height:100%;display:flex;flex-direction:column;justify-content:center">
+                            <div class="section-label" style="justify-content:center">Why Contact Us</div>
+                            <h3 style="color:var(--white);font-size:1.5rem;text-align:center;margin-bottom:24px">Your Islamic Finance Journey Starts Here</h3>
+                            <div style="display:flex;flex-direction:column;gap:20px">
+                                <div style="display:flex;gap:16px;align-items:flex-start">
+                                    <div style="width:40px;height:40px;background:rgba(201,168,76,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold-400)"><i class="fas fa-check"></i></div>
+                                    <div><h5 style="font-family:'Inter';font-size:.9rem;color:var(--white);margin-bottom:4px">Free Initial Consultation</h5><p style="font-size:.85rem;color:rgba(255,255,255,0.55);margin:0">Get expert advice at no cost to understand your Shariah-compliant options.</p></div>
+                                </div>
+                                <div style="display:flex;gap:16px;align-items:flex-start">
+                                    <div style="width:40px;height:40px;background:rgba(201,168,76,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold-400)"><i class="fas fa-check"></i></div>
+                                    <div><h5 style="font-family:'Inter';font-size:.9rem;color:var(--white);margin-bottom:4px">Tailored Solutions</h5><p style="font-size:.85rem;color:rgba(255,255,255,0.55);margin:0">Every solution is customized to your unique financial needs and goals.</p></div>
+                                </div>
+                                <div style="display:flex;gap:16px;align-items:flex-start">
+                                    <div style="width:40px;height:40px;background:rgba(201,168,76,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold-400)"><i class="fas fa-check"></i></div>
+                                    <div><h5 style="font-family:'Inter';font-size:.9rem;color:var(--white);margin-bottom:4px">Global Expertise</h5><p style="font-size:.85rem;color:rgba(255,255,255,0.55);margin:0">Benefit from our worldwide network of Islamic finance professionals.</p></div>
+                                </div>
+                                <div style="display:flex;gap:16px;align-items:flex-start">
+                                    <div style="width:40px;height:40px;background:rgba(201,168,76,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold-400)"><i class="fas fa-check"></i></div>
+                                    <div><h5 style="font-family:'Inter';font-size:.9rem;color:var(--white);margin-bottom:4px">Quick Response</h5><p style="font-size:.85rem;color:rgba(255,255,255,0.55);margin:0">Our team responds within 24 hours to all inquiries.</p></div>
+                                </div>
+                            </div>
+                            <div style="margin-top:30px;text-align:center">
+                                <div class="footer-social" style="justify-content:center">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- END CONTACT PAGE -->
+
+
+    <!-- ==================== SHARED FOOTER ==================== -->
+    <footer class="main-footer section-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-12 col-xl-4">
+                    <div class="footer-logo">
+                        <img src="https://usmanisfinancialconsultancy.com/assets/images/general_images/logo.PNG" alt="Logo">
+                        <p>Empowering Islamic Finance, globally, Usmani's Financial Consultancy specializes in Shariah-compliant finance, eliminating Riba and non-Islamic agreements.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-4">
+                    <div>
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <div class="footer-links">
+                            <a onclick="navigateTo('home')">Home</a>
+                            <a onclick="navigateTo('about')">About</a>
+                            <a onclick="navigateTo('services')">Services</a>
+                            <a onclick="navigateTo('contact')">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-4">
+                    <div>
+                        <h4 class="footer-heading">Contact Info</h4>
+                        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><p>UK address: Unit F, Winston Business Park, Churchill Way 26434, Sheffield, United Kingdom, S35 2PS</p></div>
+                        <div class="footer-contact-item"><i class="fas fa-envelope"></i><p>info@usmanisfinancialconsultancy.com</p></div>
+                        <div class="footer-contact-item"><i class="fa fa-phone-alt"></i><p>+447478034875</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2025 Usmani's Financial Consultancy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ===== PRELOADER =====
+        window.addEventListener('load', function(){setTimeout(function(){document.getElementById('preloader').classList.add('hidden')},800)});
+
+        // ===== NAVBAR SCROLL =====
+        var navbar=document.getElementById('mainNavbar');
+        window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',window.scrollY>80)});
+
+        // ===== LANGUAGE DROPDOWN =====
+        (function(){
+            var t=document.getElementById('lang-toggle'),m=document.getElementById('lang-menu'),s=document.getElementById('lang-selector');
+            if(!t||!m||!s)return;
+            t.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();m.style.display=m.style.display==='block'?'none':'block'});
+            document.addEventListener('click',function(e){if(!s.contains(e.target)&&m.style.display==='block')m.style.display='none'})
+        })();
+
+        // ===== SPA NAVIGATION =====
+        function navigateTo(page){
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(function(p){p.classList.remove('active-page','page-fade-in')});
+            // Show target page
+            var target=document.getElementById('page-'+page);
+            if(target){
+                target.classList.add('active-page');
+                // Trigger fade animation
+                void target.offsetWidth;
+                target.classList.add('page-fade-in');
+            }
+            // Update nav active state
+            document.querySelectorAll('.main-navbar .nav-link[data-page]').forEach(function(l){
+                l.classList.toggle('active',l.dataset.page===page);
+            });
+            // Scroll to top
+            window.scrollTo({top:0,behavior:'instant'});
+            // Close mobile menu
+            var collapse=document.getElementById('navbarCollapse');
+            var bsCollapse=bootstrap.Collapse.getInstance(collapse);
+            if(bsCollapse)bsCollapse.hide();
+            // Re-init reveal animations for new page
+            setTimeout(function(){
+                document.querySelectorAll('.page-section.active-page .reveal').forEach(function(el){
+                    revealObserver.observe(el);
+                });
+            },100);
+            // Restart slider if going home
+            if(page==='home'){restartSlider()}
+            // Update URL without reload
+            if(history.pushState){
+                var url=page==='home'?'/':'/'+page;
+                history.pushState({page:page},'',url);
+            }
+        }
+
+        // Handle browser back/forward
+        window.addEventListener('popstate',function(e){
+            if(e.state&&e.state.page){navigateTo(e.state.page)}
+            else{navigateTo('home')}
+        });
+
+        // ===== HERO SLIDER (Clean Crossfade) =====
+        var slides=document.querySelectorAll('.hero-slide');
+        var indicators=document.querySelectorAll('.slide-indicator');
+        var currentSlide=0,sliderInterval,sliderAnimating=false;
+
+        function goToSlide(index){
+            if(index===currentSlide||sliderAnimating||slides.length<2)return;
+            sliderAnimating=true;
+            var prev=slides[currentSlide],next=slides[index];
+            next.style.opacity='0';
+            next.style.visibility='visible';
+            next.style.zIndex='2';
+            next.classList.add('active');
+            prev.classList.remove('active');
+            prev.classList.add('fading-out');
+            prev.style.zIndex='1';
+            requestAnimationFrame(function(){
+                next.style.opacity='1';
+            });
+            setTimeout(function(){
+                prev.style.opacity='0';
+                prev.style.visibility='hidden';
+                prev.style.zIndex='0';
+                prev.classList.remove('fading-out');
+                sliderAnimating=false;
+            },1000);
+            currentSlide=index;
+            indicators.forEach(function(i){i.classList.remove('active')});
+            if(indicators[currentSlide])indicators[currentSlide].classList.add('active');
+        }
+
+        function nextHeroSlide(){goToSlide((currentSlide+1)%slides.length)}
+        function startSlider(){sliderInterval=setInterval(nextHeroSlide,6000)}
+        function restartSlider(){clearInterval(sliderInterval);if(slides[0]){slides[0].style.opacity='1';slides[0].style.visibility='visible';slides[0].style.zIndex='2';slides[0].classList.add('active')}startSlider()}
+
+        indicators.forEach(function(ind){
+            ind.addEventListener('click',function(){
+                clearInterval(sliderInterval);
+                goToSlide(parseInt(this.dataset.slide));
+                startSlider();
+            });
+        });
+
+        if(slides.length>0)startSlider();
+
+        // ===== TRAINING TABS =====
+        function switchTrainingTab(el,tabId){
+            el.closest('.training-pills').querySelectorAll('.training-pill').forEach(function(p){p.classList.remove('active')});
+            el.classList.add('active');
+            el.closest('.row').querySelectorAll('.tab-pane').forEach(function(t){t.classList.remove('active')});
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // ===== CONTACT FORM =====
+        function handleContactSubmit(e){
+            e.preventDefault();
+            document.getElementById('contactForm').style.display='none';
+            document.getElementById('contactSuccess').style.display='block';
+        }
+
+        // ===== SCROLL REVEAL =====
+        var revealObserver=new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible')});
+        },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+
+        document.querySelectorAll('.reveal').forEach(function(el){revealObserver.observe(el)});
+
+        // ===== SUBTLE PARALLAX =====
+        document.querySelectorAll('.hero-section, .page-hero').forEach(function(section){
+            section.addEventListener('mousemove',function(e){
+                var rect=section.getBoundingClientRect();
+                var x=((e.clientX-rect.left)/rect.width)-0.5;
+                var y=((e.clientY-rect.top)/rect.height)-0.5;
+                var heroBg=section.querySelector('.page-hero-bg');
+                if(heroBg){heroBg.style.transform='scale(1.06) translate3d(' + (x*-16) + 'px,' + (y*-16) + 'px,0)';}
+                var heroImg=section.querySelector('.hero-slide.active img');
+                if(heroImg){heroImg.style.transform='scale(1.04) translate3d(' + (x*10) + 'px,' + (y*10) + 'px,0)';}
+            });
+            section.addEventListener('mouseleave',function(){
+                var heroBg=section.querySelector('.page-hero-bg');
+                if(heroBg){heroBg.style.transform='';}
+                var heroImg=section.querySelector('.hero-slide.active img');
+                if(heroImg){heroImg.style.transform='';}
+            });
+        });
+
+        // ===== CURSOR GLOW =====
+        var cursorGlow=document.getElementById('cursorGlow');
+        if(window.innerWidth>1024){
+            document.addEventListener('mousemove',function(e){cursorGlow.style.left=e.clientX+'px';cursorGlow.style.top=e.clientY+'px'});
+        }else{cursorGlow.style.display='none'}
+
+        // ===== INIT: Set initial history state =====
+        history.replaceState({page:'home'},'', '/');
+    </script>
+
+</body>
+</html>
